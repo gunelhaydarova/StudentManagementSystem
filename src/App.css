@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: rgba(244, 249, 253, 255);
+  overflow: auto;
+}
+
+.left {
+  width: 320px !important;
+}
+
+.right {
+  width: calc(100% - 360px) !important;
+}
+
+.data-table-extensions-action {
+  display: none;
+}
+
+button.me-2.mb-2.btn.btn-primary {
+  margin-top: 70px;
+  width: 200px;
+  float: right;
+}
+
+.navbar {
+  padding-right: 20px;
+}
+
+.dropdown_menu {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.gXlqCi {
+  min-height: 7px !important;
+}
+
+.data-table-extensions {
+  margin-top: 30px;
+  margin-right: 50px;
+  box-shadow: none;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation4.tss-58la38-MUIDataTable-paper.tss-1bk4gez-MUIDataTable-root.css-11mde6h-MuiPaper-root {
+  margin-top: 5rem;
+}
+
+.css-levciy-MuiTablePagination-displayedRows, .css-pdct74-MuiTablePagination-selectLabel {
+  margin: 0;
+  color: rgb(163, 163, 163);
+}

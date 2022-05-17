@@ -1,0 +1,158 @@
+#sidebar {
+    background: #FFFFFF;
+    grid-area: sidebar;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    font-family: Roboto;
+    font-size: 16px;
+    max-width: 256px;
+    min-width: 260px;
+    letter-spacing: 0.01em;
+    height: 100vh;
+    box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
+    position: fixed !important;
+
+}
+
+.sidebar__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 4rem;
+}
+
+.sidebar__img {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.sidebar__img h3 {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.sidebar__img span {
+    color: grey;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.01em;
+}
+
+.sidebar__img div {
+    margin-left: 10px;
+}
+
+.sidebar__icon {
+    align-items: center;
+    width: 13px;
+    margin: 0 10px;
+}
+
+.sidebar__title>div>img {
+    width: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar__title>div>h1 {
+    font-size: 18px;
+}
+
+.sidebar__title>i {
+    font-size: 18px;
+    display: none;
+}
+
+.sidebar__menu>h2 {
+    color: #3ea175;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.sidebar__menu hr {
+
+    width: 256px;
+    border: 0;
+    border-top: 1px solid #EBEFF2;
+
+}
+
+.sidebar__link {
+    color: #f3f4f6;
+    padding: 10px;
+    margin: 20px 20px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    height: 16px;
+    left: 58px;
+    top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.active_menu_link {
+    color: #4F9BFF;
+}
+
+.active_menu_link a {
+    color: #4f9bff !important;
+}
+
+.sidebar__link>a {
+    text-decoration: none;
+    color: #39577d;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.sidebar__link>i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar__link :hover {
+    color: #4f9bff !important;
+}
+
+.sidebar_responsive {
+    display: inline !important;
+    z-index: 9999 !important;
+    left: 0 !important;
+    position: absolute;
+    width: 256px;
+}
+
+@media only screen and (max-width: 978px) {
+    #sidebar {
+        display: none;
+    }
+
+    .sidebar__title>i {
+        display: inline;
+    }
+}
+
+.nav {
+    float: right;
+    top: 10px;
+
+}
+
+.avatar {
+    width: 30px;
+}
+
+.main {
+    margin-right: 50px;
+}
