@@ -27,7 +27,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
 
                 <div className="sidebar__menu">
                     <div className="sidebar__link " id="sidebar_1">
-                        <a href="/TEACHER"> Müəllimlər </a>
+                        <a href="/ADMIN"> Müəllimlər </a>
                     </div>
                     <div className="sidebar__link " id="sidebar_2">
                         <a href="/students">Tələbələr</a>
