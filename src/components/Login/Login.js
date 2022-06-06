@@ -53,7 +53,6 @@ export default function Login() {
                             .then((res) => {
                                 url = '/group/:' + res[0].id;
                                 var url_id = ':' + res[0].id;
-                                sessionStorage.setItem('id', url_id);
                                 window.location.replace(url);
                             });
 

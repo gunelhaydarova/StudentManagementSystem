@@ -48,6 +48,7 @@ class TeamData extends React.Component {
             columns: [],
             show: false,
             lastDate: '',
+            val: 0,
             startDate: new Date(),
         }
     }
@@ -69,7 +70,10 @@ class TeamData extends React.Component {
             }
         ];
         var p = 0;
-        fetch('http://localhost:8080/v1/scores/1/2')
+        var teamId = sessionStorage.getItem('id').substring(1);
+        var subjectId = sessionStorage.getItem('subjectId')
+
+        fetch(`http://localhost:8080/v1/scores/${teamId}/${subjectId}`)
             .then((response) => response.json())
             .then((res) => {
                 var arr = [], data = [];
@@ -83,7 +87,7 @@ class TeamData extends React.Component {
                         if (txt != this.state.lastDate)
                             arr[txt] = res[i].scores[j].grade;
                         else
-                            arr[txt] = <input type='text' class="form-control" value={res[i].scores[j].grade} />
+                            arr[txt] = <input type='text' class="form-control" onBlur={this.onChangeScore} id={res[i].scores[j].id} value={res[i].scores[j].grade} />
                         p++;
                         if (p <= res[i].scores.length) {
                             var obj = {
@@ -107,6 +111,22 @@ class TeamData extends React.Component {
     showModal() {
         this.setState({ show: true })
     }
+    onChangeScore = event => {
+        var formData = {
+            "id": event.target.id,
+            "grade": event.target.value
+        }
+        const url = 'http://localhost:8080/v1/scores/';
+        const params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }
+        fetch(url, params)
+            .then((response) => { console.log(response) })
+    };
     addColumn() {
 
         var column = this.state.columns;
@@ -150,7 +170,7 @@ class TeamData extends React.Component {
                     }
                 ];
                 var p = 0;
-                fetch('http://localhost:8080/v1/scores/1/2')
+                fetch(`http://localhost:8080/v1/scores/${teamId}/${subjectId}`)
                     .then((response) => response.json())
                     .then((res) => {
                         var arr = [], data = [];
@@ -164,7 +184,7 @@ class TeamData extends React.Component {
                                 if (txt != this.state.lastDate)
                                     arr[txt] = res[i].scores[j].grade;
                                 else
-                                    arr[txt] = <input type='text' class="form-control" value={res[i].scores[j].grade} />
+                                    arr[txt] = <input type='text' class="form-control" onBlur={this.onChangeScore} id={res[i].scores[j].id} value={res[i].scores[j].grade} />
                                 p++;
                                 if (p <= res[i].scores.length) {
                                     var obj = {
@@ -239,7 +259,7 @@ class TeamData extends React.Component {
                 <Row>
                     <Col>
                         <Button key={1} className="me-2 mb-2" onClick={() => this.showModal()}>
-                            Yeni Tarix
+                            Yeni Dərs
                         </Button>
                     </Col>
                 </Row>

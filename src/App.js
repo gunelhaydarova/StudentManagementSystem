@@ -17,7 +17,6 @@ function App() {
           <Route path="/ADMIN" component={Teacher} />
           <Route path="/students" component={Student} />
           <Route path="/faculties" component={Faculty} />
-          <Route path="/TEACHER" component={Team} />
           <Route path="/group/:id" component={Team} />
         </Switch>
       </Router>
