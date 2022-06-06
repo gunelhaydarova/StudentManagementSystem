@@ -76,6 +76,7 @@ export default class AddStudent extends React.Component {
         return this.state.firstname.length > 0 && this.state.lastname.length > 0 && this.state.email.length > 0 && this.state.password.length > 0 && this.state.teams.length > 0 && this.state.sem.length > 0 && this.state.degree.length > 0;
     }
     saveData() {
+        //alert(this.state.startDate)
         var message, variant;
         if (this.state.phone.length != 12) {
             message = 'Telefon nömrəsini düzgen daxil edin!';

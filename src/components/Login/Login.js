@@ -40,7 +40,27 @@ export default function Login() {
                     setPassword('')
                 }
                 else {
-                    window.location.replace(response.role);
+                    fetch(`http://localhost:8080/v1/teams/teacher-email/?email=${email}`)
+                        .then(response => response.json())
+                        .then(response => {
+                            sessionStorage.setItem('subjectId', response.subjectId);;
+                        })
+                    var url;
+                    sessionStorage.setItem('role', response.role);
+                    if (response.role == 'TEACHER') {
+                        fetch('http://localhost:8080/v1/teams')
+                            .then((response) => response.json())
+                            .then((res) => {
+                                url = '/group/:' + res[0].id;
+                                var url_id = ':' + res[0].id;
+                                sessionStorage.setItem('id', url_id);
+                                window.location.replace(url);
+                            });
+
+                    }
+                    else window.location.replace(response.role);
+
+
                 };
             });
 
